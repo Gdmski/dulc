@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>My Events</h1> <br>
+
+Number of Events: {{ event_count }}
+{% for event in object_list %}
+      <ul>  
+            <li>  
+                  
+                  date:             {{event.date_1}}</br>
+                  descripiton:      {{event.desc}}</br>
+                  RS rating:        {{event.RS_rate}}</br>
+                  GM rating:        {{event.GM_rate}}</br>
+                  <a href="{% url 'update-detail' event.pk %}">Update Event</a><br>
+                  <a href="{% url 'delete-event' event.pk %}">Delete Event</a><br>
+                  <a href="{% url 'event-detail' event.pk %}">Event Detail</a><br>
+            </li>
+      </ul>
+{% endfor %}
+<a href="{% url 'expenses' %}">Expenses Page</a>
+<br>
+<a href="{% url 'add-event' %}">Add Event</a>
+{% endblock %}

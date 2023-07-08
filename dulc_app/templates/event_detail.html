@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{dulcinea.desc}}
+<br>
+{% if dulcinea.event_image %}
+<img src="{{dulcinea.event_image.url }}" style= width:200px;height:200px >
+{% endif %}
+<br>
+<a href="{% url 'home'%}" class="btn btn-primary">Home</a>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Delete {{ dulcinea.date_1 }} </h3>
+<div class="form-group">
+      <form method="POST">
+            {% csrf_token %}
+            <br>
+            <strong>Are you sure??</strong><br>
+            <button class="btn btn-primary">Delete Event</button>
+      </form>
+</div>
+<br>
+<a href="{% url 'home'%}" class="btn btn-primary">Home</a>
+{% endblock %}
